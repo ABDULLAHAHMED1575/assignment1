@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter+=50;
       if(_fontSize < 20.0){
-        _fontSize+=0.2;
+        _fontSize+=0.1;
       }
     });
   }
