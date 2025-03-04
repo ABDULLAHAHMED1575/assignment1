@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _decrementCounter() {
     setState(() {
       _counter-=50;
-      if(_fontSize < 16.0){
+      if(_fontSize > 16.0){
         _fontSize-=0.2;
       }
     });
