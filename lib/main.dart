@@ -42,6 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
+  void _decrementCounter() {
+    setState(() {
+      _counter-=50;
+      if(_fontSize < 16.0){
+        _fontSize-=0.2;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,12 +81,33 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        backgroundColor: Colors.deepPurpleAccent.shade100,
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton:Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+            FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            backgroundColor: Colors.blue.shade500,
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(width: 16),
+          FloatingActionButton(
+            onPressed: _decrementCounter,
+            backgroundColor: Colors.red.shade500,
+            child: const Icon(Icons.remove),
+          )
+        ]
+
+      )
+
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      // persistentFooterButtons: [
+      //   FloatingActionButton(
+      //       onPressed: _decrementCounter,
+      //       backgroundColor:Colors.deepPurpleAccent.shade100,
+      //       child: const Icon(Icons.remove),
+      //   )
+      // ],
 
       // This trailing comma makes auto-formatting nicer for build methods.
     );
